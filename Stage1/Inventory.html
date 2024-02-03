@@ -86,7 +86,7 @@
       </div>
       
       <div id="Vegetables" class="tabcontent">
-        <h3>List(2)</h3>
+        <h3></h3>
         <div class="btn-group">
             <button class="button" onclick="setButtonColour(this)">Carrot</button>
             <button class="button" onclick="setButtonColour(this)">Cucumber</button>
@@ -94,7 +94,7 @@
       </div>
       
       <div id="Spices" class="tabcontent">
-        <h3>List(5)</h3>
+        <h3></h3>
         <div class="btn-group">
             <button class="button" onclick="setButtonColour(this)">Salt</button>
             <button class="button" onclick="setButtonColour(this)">Pepper</button>
@@ -105,7 +105,7 @@
       </div>
       
       <div id="Fruits" class="tabcontent">
-        <h3>List(8)</h3>
+        <h3></h3>
         <div class="btn-group">
             <button class="button" onclick="setButtonColour(this)">Apple</button>
             <button class="button" onclick="setButtonColour(this)">Banana</button>
@@ -141,6 +141,18 @@ function setButtonColour(element) {
 
     ///add new one
     element.classList.add("button-clicked");
+}
+
+listsum('Vegetables');
+listsum('Spices');
+listsum('Fruits');
+
+function listsum(el){
+    var v = document.getElementById(el);
+    var buttonGroup = v.querySelector('.btn-group');
+    var buttons = buttonGroup.querySelectorAll('button');
+    var numberOfButtons = buttons.length;
+    v.querySelector("h3").textContent = "List (" + numberOfButtons + ")";
 }
 </script>
 </body>
