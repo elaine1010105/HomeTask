@@ -5,7 +5,16 @@
 </head>
 <style>
     body {font-family: Arial;}
-    
+    h1 {
+        background-color: #bb9cd5;
+        border: none;
+        color: black;
+        padding: 15px 32px;
+        text-align: left;
+        text-decoration: none;
+        font-size: 32px;
+    }
+
     /* Style the tab */
     .tab {
       overflow: hidden;
@@ -32,7 +41,7 @@
     
     /* Create an active/current tablink class */
     .tab button.active {
-      background-color: #ccc;
+      background-color: #1cb41c;
     }
     
     /* Style the tab content */
@@ -42,6 +51,28 @@
       border: 1px solid #ccc;
       border-top: none;
     }
+
+    .btn-group .button {
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        color: black;
+        padding: 15px 32px;
+        text-align: left;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        width: 150px;
+        display: block;
+      }
+      
+    .btn-group .button:not(:last-child) {
+        border-bottom: none;
+    }
+
+    .btn-group .button-clicked {
+        background-color: #1cb41c;
+    }
+
     </style>
 
 <body>
@@ -56,35 +87,35 @@
       
       <div id="Vegetables" class="tabcontent">
         <h3>List(2)</h3>
-        <ul>
-            <li>Carrot</li>
-            <li>Cucumber</li>
-          </ul>
+        <div class="btn-group">
+            <button class="button" onclick="setButtonColour(this)">Carrot</button>
+            <button class="button" onclick="setButtonColour(this)">Cucumber</button>
+        </div>
       </div>
       
       <div id="Spices" class="tabcontent">
         <h3>List(5)</h3>
-        <ul> 
-            <li>Salt</li>
-            <li>Pepper</li>
-            <li>Chilli</li>
-            <li>Herbs</li>
-            <li>Curry</li>
-          </ul>
+        <div class="btn-group">
+            <button class="button" onclick="setButtonColour(this)">Salt</button>
+            <button class="button" onclick="setButtonColour(this)">Pepper</button>
+            <button class="button" onclick="setButtonColour(this)">Chilli</button>
+            <button class="button" onclick="setButtonColour(this)">Herbs</button>
+            <button class="button" onclick="setButtonColour(this)">Curry</button>
+        </div>
       </div>
       
       <div id="Fruits" class="tabcontent">
         <h3>List(8)</h3>
-        <ul>
-            <li>Apple</li>
-            <li>Banana</li>
-            <li>Pear</li>
-            <li>Watermelon</li>
-            <li>Grape</li>
-            <li>Strawberry</li>
-            <li>Mango</li>
-            <li>Blackberry</li>
-          </ul> 
+        <div class="btn-group">
+            <button class="button" onclick="setButtonColour(this)">Apple</button>
+            <button class="button" onclick="setButtonColour(this)">Banana</button>
+            <button class="button" onclick="setButtonColour(this)">Pear</button>
+            <button class="button" onclick="setButtonColour(this)">Watermelon</button>
+            <button class="button" onclick="setButtonColour(this)">Grape</button>
+            <button class="button" onclick="setButtonColour(this)">Strawberry</button>
+            <button class="button" onclick="setButtonColour(this)">Mango</button>
+            <button class="button" onclick="setButtonColour(this)">Blackberry</button>
+        </div>
       </div>
 <script>
 function openInventory(evt, cityName) {
@@ -99,6 +130,17 @@ function openInventory(evt, cityName) {
   }
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
+}
+
+function setButtonColour(element) {
+    ///remove old element
+    const el = document.querySelector(".button-clicked");
+    if(el != null) {
+        el.classList.remove("button-clicked");        
+    }
+
+    ///add new one
+    element.classList.add("button-clicked");
 }
 </script>
 </body>
