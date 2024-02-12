@@ -1,0 +1,23 @@
+{
+    "Vegetables":[
+        "Carrot",
+        "Cucumber"
+    ],
+    "Spices":[
+      "Salt",
+      "Pepper",
+      "Chili",
+      "Herbs",
+      "Curry"
+    ],
+    "Fruits":[
+        "Apple",
+        "Banana",
+        "Pear",
+        "Watermelon",
+        "Grape",
+        "Strawberry",
+        "Mango",
+        "Blackberry"
+    ]
+  }
